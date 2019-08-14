@@ -1,0 +1,43 @@
+{
+  "generator-jhipster": {
+    "promptValues": {
+      "packageName": "uasb.edu",
+      "nativeLanguage": "es"
+    },
+    "jhipsterVersion": "6.2.0",
+    "applicationType": "monolith",
+    "baseName": "banco",
+    "packageName": "uasb.edu",
+    "packageFolder": "uasb/edu",
+    "serverPort": "8080",
+    "authenticationType": "jwt",
+    "cacheProvider": "no",
+    "websocket": false,
+    "databaseType": "sql",
+    "devDatabaseType": "mysql",
+    "prodDatabaseType": "mysql",
+    "searchEngine": false,
+    "messageBroker": false,
+    "serviceDiscoveryType": false,
+    "buildTool": "maven",
+    "enableSwaggerCodegen": false,
+    "jwtSecretKey": "MTM1MzBjNmFhMTVkYWMwMGRlZjRiY2VmYjIwNWQ1ODUyYTI0MjgxMGM3MGQ2YWQ1MTg5NDU0MTZjNjExMzUxZTg5NTQyZGMzODUzZGMzNDYzYjRhNjhmNTU4YWY0ZjZhMzE5NTFiOGE4M2FiYTYzYTBlMmQ1NzAzYzU0ZmY1MDQ=",
+    "useSass": true,
+    "clientPackageManager": "npm",
+    "clientFramework": "angularX",
+    "clientTheme": "none",
+    "clientThemeVariant": "",
+    "testFrameworks": [],
+    "jhiPrefix": "jhi",
+    "entitySuffix": "",
+    "dtoSuffix": "DTO",
+    "otherModules": [],
+    "enableTranslation": true,
+    "nativeLanguage": "es",
+    "languages": [
+      "es",
+      "en"
+    ],
+    "blueprints": []
+  }
+}

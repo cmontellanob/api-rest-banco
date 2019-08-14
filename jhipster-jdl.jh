@@ -1,0 +1,81 @@
+application {
+  config {
+    databaseType sql
+    devDatabaseType mysql
+    enableSwaggerCodegen true
+    enableTranslation true
+    jhiPrefix jhi
+    languages [es, en]
+    messageBroker false
+    nativeLanguage es
+    packageName uasb.edu
+    packageFolder uasb/edu
+    prodDatabaseType mysql
+    searchEngine false
+    serviceDiscoveryType false
+    skipClient false
+    skipServer false
+    testFrameworks []
+    websocket false
+    promptValues [object Object]
+    jhipsterVersion 6.2.0
+    applicationType monolith
+    baseName banco
+    serverPort 8900
+    authenticationType jwt
+    buildTool maven
+    jwtSecretKey ZjQ3NWQ0ODc3NmUwNTYzYTA0NGIwZjdmOTJlYzg5ODg5YjFiZGVjODcyNWI3NmUyNmFkM2U3Nzg4ZjgwOGUxNTVkZTk2MjE4NzcyZjRmYzVkYjIzYmExMDk5YWUyMDUzYjNjNjlmMjU1ZjkxNjEzZTJlOWE5YmRhYmFjYmZkY2E=
+    useSass true
+    clientPackageManager npm
+    clientFramework angularX
+    clientTheme none
+    clientThemeVariant 
+    entitySuffix 
+    dtoSuffix DTO
+    otherModules 
+    blueprints 
+    skipUserManagement false
+  }
+
+  entities Cliente, Cuenta, Transaccion
+}
+entity Cliente {
+  documentoIdentidad Long,
+  nombres String,
+  primerApellido String,
+  segundoApellido String,
+  correo String,
+  celular String
+}
+entity Cuenta {
+  nroCuenta Long required,
+  fechaApertura Instant,
+  moneda Moneda,
+  estado Estado
+}
+entity Transaccion {
+  fechaTransaccion Instant,
+  tipoTransaccion TipoTransaccion,
+  cantidad Long,
+  descripcion String
+}
+enum Moneda {
+  BOB,
+  USD
+}
+enum Estado {
+  Vigente,
+  Suspendida
+}
+enum TipoTransaccion {
+  Ingreso,
+  Egreso
+}
+
+relationship OneToMany {
+  Cliente{cuenta} to Cuenta{cliente(documentoIdentidad) required},
+  Cuenta{transaccion} to Transaccion{cuenta(nroCuenta) required}
+}
+
+paginate Cliente, Cuenta with pagination
+service Cliente, Cuenta, Transaccion with serviceImpl

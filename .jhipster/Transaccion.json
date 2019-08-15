@@ -1,0 +1,41 @@
+{
+    "name": "Transaccion",
+    "fields": [
+        {
+            "fieldName": "fechaTransaccion",
+            "fieldType": "Instant"
+        },
+        {
+            "fieldName": "tipoTransaccion",
+            "fieldType": "TipoTransaccion",
+            "fieldValues": "Ingreso,Egreso"
+        },
+        {
+            "fieldName": "cantidad",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "descripcion",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "cuenta",
+            "otherEntityRelationshipName": "transaccion",
+            "relationshipValidateRules": "required",
+            "relationshipName": "cuenta",
+            "otherEntityField": "nroCuenta"
+        }
+    ],
+    "changelogDate": "20190814043047",
+    "entityTableName": "transaccion",
+    "dto": "no",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

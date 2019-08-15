@@ -1,0 +1,9 @@
+{
+  "bancoApp": {
+    "Moneda": {
+      "null": "",
+      "BOB": "BOB",
+      "USD": "USD"
+    }
+  }
+}

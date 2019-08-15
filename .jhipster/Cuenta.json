@@ -1,0 +1,51 @@
+{
+    "name": "Cuenta",
+    "fields": [
+        {
+            "fieldName": "nroCuenta",
+            "fieldType": "Long",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "fechaApertura",
+            "fieldType": "Instant"
+        },
+        {
+            "fieldName": "moneda",
+            "fieldType": "Moneda",
+            "fieldValues": "BOB,USD"
+        },
+        {
+            "fieldName": "estado",
+            "fieldType": "Estado",
+            "fieldValues": "Vigente,Suspendida"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "transaccion",
+            "otherEntityRelationshipName": "cuenta",
+            "relationshipName": "transaccion"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "cliente",
+            "otherEntityRelationshipName": "cuenta",
+            "relationshipValidateRules": "required",
+            "relationshipName": "cliente",
+            "otherEntityField": "documentoIdentidad"
+        }
+    ],
+    "changelogDate": "20190814043046",
+    "entityTableName": "cuenta",
+    "dto": "no",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

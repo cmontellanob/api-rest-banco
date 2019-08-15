@@ -1,0 +1,45 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="cuenta">
+            <h2><span jhiTranslate="bancoApp.cuenta.detail.title">Cuenta</span> {{cuenta.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="bancoApp.cuenta.nroCuenta">Nro Cuenta</span></dt>
+                <dd>
+                    <span>{{cuenta.nroCuenta}}</span>
+                </dd>
+                <dt><span jhiTranslate="bancoApp.cuenta.fechaApertura">Fecha Apertura</span></dt>
+                <dd>
+                    <span>{{cuenta.fechaApertura}}</span>
+                </dd>
+                <dt><span jhiTranslate="bancoApp.cuenta.moneda">Moneda</span></dt>
+                <dd>
+                    <span jhiTranslate="{{'bancoApp.Moneda.' + cuenta.moneda}}">{{cuenta.moneda}}</span>
+                </dd>
+                <dt><span jhiTranslate="bancoApp.cuenta.estado">Estado</span></dt>
+                <dd>
+                    <span jhiTranslate="{{'bancoApp.Estado.' + cuenta.estado}}">{{cuenta.estado}}</span>
+                </dd>
+                <dt><span jhiTranslate="bancoApp.cuenta.cliente">Cliente</span></dt>
+                <dd>
+                    <div *ngIf="cuenta.cliente">
+                        <a [routerLink]="['/cliente', cuenta.cliente?.id, 'view']">{{cuenta.cliente?.documentoIdentidad}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/cuenta', cuenta.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

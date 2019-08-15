@@ -1,0 +1,46 @@
+{
+    "name": "Cliente",
+    "fields": [
+        {
+            "fieldName": "documentoIdentidad",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "nombres",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "primerApellido",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "segundoApellido",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "correo",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "celular",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "cuenta",
+            "otherEntityRelationshipName": "cliente",
+            "relationshipName": "cuenta"
+        }
+    ],
+    "changelogDate": "20190814043045",
+    "entityTableName": "cliente",
+    "dto": "no",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

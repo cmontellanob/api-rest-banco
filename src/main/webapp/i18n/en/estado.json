@@ -1,0 +1,9 @@
+{
+  "bancoApp": {
+    "Estado": {
+      "null": "",
+      "Vigente": "Vigente",
+      "Suspendida": "Suspendida"
+    }
+  }
+}

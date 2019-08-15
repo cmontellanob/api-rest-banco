@@ -1,5 +1,11 @@
 # banco
 
+## Importante
+
+Se ha modificado la configuración de producción y se puede ver las apis desde el menu
+
+---
+
 This application was generated using JHipster 6.2.0, you can find documentation and help at [https://www.jhipster.tech/documentation-archive/v6.2.0](https://www.jhipster.tech/documentation-archive/v6.2.0).
 
 ## Development

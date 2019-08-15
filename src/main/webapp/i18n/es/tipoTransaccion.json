@@ -1,0 +1,9 @@
+{
+  "bancoApp": {
+    "TipoTransaccion": {
+      "null": "",
+      "Ingreso": "Ingreso",
+      "Egreso": "Egreso"
+    }
+  }
+}

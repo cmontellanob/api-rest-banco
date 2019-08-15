@@ -1,0 +1,26 @@
+{
+  "bancoApp": {
+    "transaccion": {
+      "home": {
+        "title": "Transaccions",
+        "createLabel": "Create a new Transaccion",
+        "createOrEditLabel": "Create or edit a Transaccion",
+        "notFound": "No Transaccions found"
+      },
+      "created": "A new Transaccion is created with identifier {{ param }}",
+      "updated": "A Transaccion is updated with identifier {{ param }}",
+      "deleted": "A Transaccion is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Transaccion {{ id }}?"
+      },
+      "detail": {
+        "title": "Transaccion"
+      },
+      "fechaTransaccion": "Fecha Transaccion",
+      "tipoTransaccion": "Tipo Transaccion",
+      "cantidad": "Cantidad",
+      "descripcion": "Descripcion",
+      "cuenta": "Cuenta"
+    }
+  }
+}

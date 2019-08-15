@@ -1,0 +1,11 @@
+id;fecha_transaccion;tipo_transaccion;cantidad;descripcion;cuenta_id
+1;2019-08-13T07:27:43;Egreso;55520;Equatorial Guinea Vision-oriented;1
+2;2019-08-14T02:17:00;Egreso;33902;cross-media;2
+3;2019-08-13T11:05:42;Egreso;64203;Unbranded Cheese Dynamic;3
+4;2019-08-13T13:57:49;Egreso;66350;Home Gloves Latvia;4
+5;2019-08-13T11:54:45;Ingreso;71217;Networked;5
+6;2019-08-13T20:42:30;Ingreso;64963;calculating withdrawal Nevada;6
+7;2019-08-14T02:16:10;Ingreso;24398;Strategist target;7
+8;2019-08-13T07:06:32;Ingreso;57690;Cambridgeshire white sensor;8
+9;2019-08-13T21:46:45;Egreso;17711;Applications Response Human;9
+10;2019-08-13T19:38:02;Egreso;96665;Strategist SDD;10

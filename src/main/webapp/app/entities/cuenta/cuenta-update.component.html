@@ -1,0 +1,72 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-cuenta-heading" jhiTranslate="bancoApp.cuenta.home.createOrEditLabel">Create or edit a Cuenta</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!editForm.get('id').value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id"
+                        readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="bancoApp.cuenta.nroCuenta" for="field_nroCuenta">Nro Cuenta</label>
+                    <input type="number" class="form-control" name="nroCuenta" id="field_nroCuenta"
+                           formControlName="nroCuenta"/>
+                    <div *ngIf="editForm.get('nroCuenta').invalid && (editForm.get('nroCuenta').dirty || editForm.get('nroCuenta').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('nroCuenta').errors.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.get('nroCuenta')?.errors?.number" jhiTranslate="entity.validation.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="bancoApp.cuenta.fechaApertura" for="field_fechaApertura">Fecha Apertura</label>
+                    <div class="d-flex">
+                        <input id="field_fechaApertura" type="datetime-local" class="form-control" name="fechaApertura" formControlName="fechaApertura" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="bancoApp.cuenta.moneda" for="field_moneda">Moneda</label>
+                    <select class="form-control" name="moneda" formControlName="moneda" id="field_moneda">
+                        <option value="BOB">{{'bancoApp.Moneda.BOB' | translate}}</option>
+                        <option value="USD">{{'bancoApp.Moneda.USD' | translate}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="bancoApp.cuenta.estado" for="field_estado">Estado</label>
+                    <select class="form-control" name="estado" formControlName="estado" id="field_estado">
+                        <option value="Vigente">{{'bancoApp.Estado.Vigente' | translate}}</option>
+                        <option value="Suspendida">{{'bancoApp.Estado.Suspendida' | translate}}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="bancoApp.cuenta.cliente" for="field_cliente">Cliente</label>
+                    <select class="form-control" id="field_cliente" name="cliente" formControlName="cliente">
+                        <option *ngIf="!editForm.get('cliente').value" [ngValue]="null" selected></option>
+                        <option [ngValue]="clienteOption.id === editForm.get('cliente').value?.id ? editForm.get('cliente').value : clienteOption" *ngFor="let clienteOption of clientes; trackBy: trackClienteById">{{clienteOption.documentoIdentidad}}</option>
+                    </select>
+                </div>
+                <div *ngIf="editForm.get('cliente').invalid && (editForm.get('cliente').dirty || editForm.get('cliente').touched)">
+                    <small class="form-text text-danger"
+                           *ngIf="editForm.get('cliente').errors.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                    </small>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

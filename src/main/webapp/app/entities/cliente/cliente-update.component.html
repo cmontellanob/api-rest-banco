@@ -1,0 +1,54 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-cliente-heading" jhiTranslate="bancoApp.cliente.home.createOrEditLabel">Create or edit a Cliente</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!editForm.get('id').value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id"
+                        readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="bancoApp.cliente.documentoIdentidad" for="field_documentoIdentidad">Documento Identidad</label>
+                    <input type="number" class="form-control" name="documentoIdentidad" id="field_documentoIdentidad"
+                           formControlName="documentoIdentidad"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="bancoApp.cliente.nombres" for="field_nombres">Nombres</label>
+                    <input type="text" class="form-control" name="nombres" id="field_nombres"
+                           formControlName="nombres"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="bancoApp.cliente.primerApellido" for="field_primerApellido">Primer Apellido</label>
+                    <input type="text" class="form-control" name="primerApellido" id="field_primerApellido"
+                           formControlName="primerApellido"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="bancoApp.cliente.segundoApellido" for="field_segundoApellido">Segundo Apellido</label>
+                    <input type="text" class="form-control" name="segundoApellido" id="field_segundoApellido"
+                           formControlName="segundoApellido"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="bancoApp.cliente.correo" for="field_correo">Correo</label>
+                    <input type="text" class="form-control" name="correo" id="field_correo"
+                           formControlName="correo"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="bancoApp.cliente.celular" for="field_celular">Celular</label>
+                    <input type="text" class="form-control" name="celular" id="field_celular"
+                           formControlName="celular"/>
+                </div>
+
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
